@@ -1,3 +1,8 @@
+:root{
+    --gray-color:gray;
+    --red-color:red;
+}
+
 *
 {
     padding: 0;
@@ -36,13 +41,33 @@ main {
 header{
     grid-area: header;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 30% 60% 20%;
     padding: 0 20px;
    
 }
 
+header i{
+    font-size: 2.5rem;
+
+}
+
+/*logo color*/
+.fa-youtube{
+    color: var(--red-color);
+}
+
+.fa-bars{
+    color: var(--gray-color);
+}
+
+button{
+    background: transparent;
+    border: none;
+}
 .header--logo{
+    width: 20%;
     display: flex;
+    justify-content: space-between;
     justify-self: left;
     align-self: center;
 
@@ -50,14 +75,73 @@ header{
 
 .header--search{
     place-self: center;
+    width: 100%;
 }
+
+.header--form{
+    display: flex;
+}
+
+.header--input{
+    width: 90%;
+    display: block;
+    padding: 5px;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid var(--gray-color);
+
+}
+
+.header--form .header--button{
+    margin-left: 10px;
+
+}
+
+.header--button__gray{
+    background-color: var(--gray-color);
+    padding: 5px;
+}
+
 
 .header--profile{
     justify-self: right;
     align-self: center;
 }
 
+.header--profile{
+    display: flex;
+    align-content: space-between;
+    width: 100%;
+}
+
 aside{
     grid-area: sidebar;
     height: 100%;
+    width: 100%;
+}
+
+.aside--list{
+    padding: 20px 10px;
+}
+
+.aside--list li a{
+   color: #030303;
+}
+
+.aside--list li:hover{
+    opacity: 0.5;
+}
+.tags{
+    display: flex;
+}
+.tags li{
+    margin: 0 10px;
+    padding: 5px 10px;
+    height: max-content;
+    border-radius: 20px;
+    background-color: var(--gray-color);
+}
+
+.tags li:hover{
+    background-color: black;
+    color: white;
 }
