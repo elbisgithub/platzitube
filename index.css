@@ -27,13 +27,14 @@ ul, ol{
     list-style: none;
 }
 
-main {
+.layout{
     display: grid;
     grid-template-areas: 
     "header header"
+    "sidebar tags"
     "sidebar content";
     grid-template-columns: 20% 80%;
-    grid-template-rows: 10% 90%;
+    grid-template-rows: 10% 5% 85%;
     height: 100vh;
     width: 100%;
 }
@@ -132,6 +133,7 @@ aside{
 }
 .tags{
     display: flex;
+    grid-area: tags;
 }
 .tags li{
     margin: 0 10px;
@@ -144,4 +146,57 @@ aside{
 .tags li:hover{
     background-color: black;
     color: white;
+}
+
+.videos{
+    grid-area: content;
+}
+
+.videos-row{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 25px  310px;
+    column-gap: 20px;
+    row-gap: 10px;
+}
+
+.videos--title{
+    grid-row: 1 / 2;
+}
+
+.video{
+    grid-row: 2 / 3;
+}
+
+.video--cover{
+    position: relative;
+}
+
+.video--cover img{
+    width: 100%;
+    height: 150px;
+}
+.video--cover{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 5px 10px;
+}
+.videos--details{
+display: flex;
+padding: 15px;
+font-size: 1.6rem;
+}
+
+.videos--details{
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+}
+
+.videos--details h2, .videos--details p{
+    margin-bottom: 10px;
 }
